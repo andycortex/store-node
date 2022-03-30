@@ -1,0 +1,33 @@
+{
+  "name": "store-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andycortex/store-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andycortex/store-node/issues"
+  },
+  "homepage": "https://github.com/andycortex/store-node#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^6.1.1",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.1"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
