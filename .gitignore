@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /postgres_data
+/mysql_data
 
 # testing
 /coverage
