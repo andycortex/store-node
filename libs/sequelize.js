@@ -8,7 +8,7 @@ const PASSWORD = encodeURIComponent(config.dbPassword);
 const connectionString = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
 
 const sequelize = new Sequelize(connectionString, {
-    dialect: 'postgres',
+    dialect: config.dbDialect,
 });
 setupModels(sequelize);
 module.exports = sequelize
