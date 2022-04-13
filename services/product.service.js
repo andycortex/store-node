@@ -1,6 +1,7 @@
 // Clean Arquitecture
 const { faker } = require('@faker-js/faker');
 const boom = require('@hapi/boom');
+const { models } = require('./../libs/sequelize');
 
 
 class ProductsService {
@@ -21,19 +22,14 @@ class ProductsService {
         }
     }
     async create(data) {
-        const newProduct = {
-            id: faker.datatype.uuid(),
-            ...data
-        }
-        this.products.push(newProduct);
+        const newProduct = await models.create(data);
         return newProduct;
     }
-    find() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(this.products);
-            }, 5000);
-        });
+    async find() {
+        const products = await models.Product.findAll({
+            include: ['category'],
+        })
+        return products
     }
     async findOne(id) {
         const product =  this.products.find(item => item.id === id);
